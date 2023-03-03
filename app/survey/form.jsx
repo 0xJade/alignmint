@@ -5,7 +5,7 @@ export function Survey() {
 
   const [coreValues,setCoreValues] = useState([])
   const [interests,setInterests] = useState([])
-  const [freeTime,setFreeTime] = useState([])
+  const [hobbies,setHobbies] = useState([])
 
   const onSubmit = e => {
     e.preventDefault()
@@ -15,14 +15,13 @@ export function Survey() {
     // elk
     console.log(interests.map(({label})=>label));
     console.log(coreValues.map(({label})=>label));
-    console.log(freeTime.map(({label})=>label));
-  
+    console.log(hobbies.map(({label})=>label))
 
   };
 
   console.log(coreValues)
   console.log(interests)
-  // console.log(freeTimeHobbies)
+  console.log(hobbies)
 
   /* List main sectors in Web3 */
   const interestOptions = [
@@ -47,21 +46,36 @@ export function Survey() {
       { value: 'success', label: 'Success and achievement' },
       { value: 'learning', label: 'Learning and knowledge acquisition' },
       { value: 'Spirituality or faith', label: 'Spirituality or faith' },
-      ];
+    ];
 
-      const freeTimeOptions = [
-        { value: 'learn', label: 'Reading books or articles' },
-        { value: 'entertainment', label: 'Watching movies or TV shows' },
-        { value: 'connection', label: 'Spending time with family and friends' },
-        { value: 'hobbies', label: 'Engaging in hobbies such as painting, writing, or playing music' },
-        { value: 'travel', label: 'Traveling to new places and exploring the world' },
-        { value: 'exercise', label: 'Exercising or playing sports' },
-        { value: 'food', label: 'Trying out new restaurants or cooking at home' },
-        { value: 'game', label: 'Playing video games or board games' },
-        { value: 'relax', label: 'Relaxing and taking time for self-care activities such as meditation or yoga' },
-        { value: 'volunteer', label: 'Volunteering or giving back to the community' },
+    const hobbiesOptions = [
+      { value: 'learn', label: 'Reading books, articles, or listening to podcasts' },
+      { value: 'entertainment', label: 'Watching movies or TV shows' },
+      { value: 'connection', label: 'Engaging in creative activities such as drawing, painting, or writing' },
+      { value: 'music', label: 'Listening to music or podcasts' },
+      { value: 'travel', label: 'Traveling to new places and exploring the world' },
+      { value: 'exercise', label: 'Exercising or playing sports' },
+      { value: 'food', label: 'Trying out new restaurants or cooking at home' },
+      { value: 'game', label: 'Playing video games or board games' },
+      { value: 'relax', label: 'Relaxing and taking time for self-care activities such as meditation or yoga' },
+      { value: 'social', label: 'Socializing with friends and family' },
+      { value: 'outdoor', label: 'Engaging in outdoor activities such as hiking, camping, or gardening' },
+      { value: 'volunteer', label: 'Volunteering or giving back to the community' },
+    ];
 
-        ];
+    const skillsOptions = [
+      { value: '', label: '' },
+      { value: '', label: '' },
+      { value: '', label: '' },
+      { value: '', label: '' },
+      { value: '', label: '' },
+      { value: '', label: '' },
+      { value: '', label: '' },
+      { value: '', label: '' },
+      { value: '', label: '' },
+      { value: '', label: '' },
+
+    ];
 
   return (
     <form onSubmit={onSubmit}>
@@ -88,13 +102,13 @@ export function Survey() {
       </label>
       <label>
       <br></br>
-        What are your top 3 ways you spend your free time?
+        What are your top 3 hobbies and/or activities?
         <br></br>
         <Select
             isMulti
-            id="freeTime"
-            onChange={e=>{setFreeTime(e);console.log(e)}}
-          options={freeTimeOptions}
+            id="hobbies"
+            onChange={e=>{setHobbies(e);console.log(e)}}
+          options={hobbiesOptions}
         />
       </label>
       <button type="submit">Submit</button>
