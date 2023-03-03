@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { client, exploreProfiles } from '../api'
 import Link from 'next/link'
 import Auth from './login/authenticate'
+import {Survey} from './survey/form'
 
 export default function Home() {
   /* create initial state to hold array of profiles */
@@ -51,7 +52,7 @@ export default function Home() {
           Together, you form a super team, filling in each other's gaps, 
           and kicking butt in everything you do!</p>
         <h3><br></br>Take the quiz below to find your curated network!</h3>
-        
+        <Survey/>
         {
           // profiles.map(profile => (
           //   <div key={profile.id} className='w-2/3 shadow-md p-6 rounded-lg mb-8 flex flex-col items-center'>
