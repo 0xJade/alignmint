@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 export function Survey() {
 
+  const [coreValues,setCoreValues] = useState([])
   const [interests,setInterests] = useState([])
   const onSubmit = e => {
     e.preventDefault()
@@ -11,9 +12,15 @@ export function Survey() {
     // kibana
     // elk
     console.log(interests.map(({label})=>label));
+    console.log(coreValues.map(({label})=>label));
+
   };
+
+  console.log(coreValues)
   console.log(interests)
-  const options = [
+
+  /* List main sectors in Web3 */
+  const interestOptions = [
     { value: 'cryptocurrency', label: 'Cryptocurrency' },
     { value: 'defi', label: 'DeFi' },
     { value: 'nfts', label: 'NFTs' },
@@ -25,15 +32,39 @@ export function Survey() {
     { value: 'energy and sustainability', label: 'Energy and Sustainability' },
     ];
 
+    const valuesOptions = [
+      { value: 'relationships', label: 'Family and relationships with loved ones' },
+      { value: 'fulfillment', label: 'Happiness and fulfillment' },
+      { value: 'security', label: 'Financial security and stability' },
+      { value: 'health', label: 'Health and well-being' },
+      { value: 'growth', label: 'Personal growth and self-improvement' },
+      { value: 'love', label: 'Love and companionship' },
+      { value: 'success', label: 'Success and achievement' },
+      { value: 'learning', label: 'Learning and knowledge acquisition' },
+      { value: 'Spirituality or faith', label: 'Spirituality or faith' },
+      ];
+
   return (
     <form onSubmit={onSubmit}>
       <label>
-        Select Top 3 Interests in Web3:
+        What are your top 3 interests in Web3?
+        <br></br>
         <Select
             isMulti
             id="interests"
             onChange={e=>{setInterests(e);console.log(e)}}
-          options={options}
+          options={interestOptions}
+        />
+      </label>
+      <label>
+        <br></br>
+        What do you believe are the top 3 most important things in life?
+        <br></br>
+        <Select
+            isMulti
+            id="coreValues"
+            onChange={e=>{setCoreValues(e);console.log(e)}}
+          options={valuesOptions}
         />
       </label>
       <button type="submit">Submit</button>
