@@ -8,6 +8,7 @@ export const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
+
 /* define a GraphQL query  */
 export const exploreProfiles = gql`
 query ExploreProfiles {

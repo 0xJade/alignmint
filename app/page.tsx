@@ -51,7 +51,9 @@ export default function Home() {
           the skills you don't, but shares your values and interests. 
           Together, you form a super team, filling in each other's gaps, 
           and kicking butt in everything you do!</p>
-        <h3><br></br>Take the quiz below to find your curated network!</h3>
+        <br></br>
+        <h3>Take the quiz below to find your curated network!</h3>
+        <br></br>
         <Survey/>
         {
           // profiles.map(profile => (
