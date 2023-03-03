@@ -5,6 +5,8 @@ export function Survey() {
 
   const [coreValues,setCoreValues] = useState([])
   const [interests,setInterests] = useState([])
+  const [freeTime,setFreeTime] = useState([])
+
   const onSubmit = e => {
     e.preventDefault()
     // decide what backend to submit this
@@ -13,11 +15,14 @@ export function Survey() {
     // elk
     console.log(interests.map(({label})=>label));
     console.log(coreValues.map(({label})=>label));
+    console.log(freeTime.map(({label})=>label));
+  
 
   };
 
   console.log(coreValues)
   console.log(interests)
+  // console.log(freeTimeHobbies)
 
   /* List main sectors in Web3 */
   const interestOptions = [
@@ -44,6 +49,20 @@ export function Survey() {
       { value: 'Spirituality or faith', label: 'Spirituality or faith' },
       ];
 
+      const freeTimeOptions = [
+        { value: 'learn', label: 'Reading books or articles' },
+        { value: 'entertainment', label: 'Watching movies or TV shows' },
+        { value: 'connection', label: 'Spending time with family and friends' },
+        { value: 'hobbies', label: 'Engaging in hobbies such as painting, writing, or playing music' },
+        { value: 'travel', label: 'Traveling to new places and exploring the world' },
+        { value: 'exercise', label: 'Exercising or playing sports' },
+        { value: 'food', label: 'Trying out new restaurants or cooking at home' },
+        { value: 'game', label: 'Playing video games or board games' },
+        { value: 'relax', label: 'Relaxing and taking time for self-care activities such as meditation or yoga' },
+        { value: 'volunteer', label: 'Volunteering or giving back to the community' },
+
+        ];
+
   return (
     <form onSubmit={onSubmit}>
       <label>
@@ -65,6 +84,17 @@ export function Survey() {
             id="coreValues"
             onChange={e=>{setCoreValues(e);console.log(e)}}
           options={valuesOptions}
+        />
+      </label>
+      <label>
+      <br></br>
+        What are your top 3 ways you spend your free time?
+        <br></br>
+        <Select
+            isMulti
+            id="freeTime"
+            onChange={e=>{setFreeTime(e);console.log(e)}}
+          options={freeTimeOptions}
         />
       </label>
       <button type="submit">Submit</button>
