@@ -4,9 +4,11 @@
 import { useEffect, useState } from 'react'
 import { client, exploreProfiles } from '../api'
 import Link from 'next/link'
+import Auth from './login/authenticate'
 
 export default function Home() {
   /* create initial state to hold array of profiles */
+  /* react component for setting user data */
   const [profiles, setProfiles] = useState<any>([])
   useEffect(() => {
     fetchProfiles()
@@ -38,20 +40,30 @@ export default function Home() {
   }
   return (
     <div className='pt-20'>
+      <Auth />
       <div className='flex flex-col justify-center items-center'>
-        <h1 className='text-5xl mb-6 font-bold'>Hello Lens 🌿</h1>
+
+        <h1 className='text-5xl mb-6 font-bold'>Welcome to AlignMint 🌿</h1>
+        <p className='text-xl text-center mt-6'>AlignMint is a platform that 
+          helps you find your perfect work buddies! This platform knows what makes you tick and what 
+          skills you have, and then it works its magic to match someone who has 
+          the skills you don't, but shares your values and interests. 
+          Together, you form a super team, filling in each other's gaps, 
+          and kicking butt in everything you do!</p>
+        <h3><br></br>Take the quiz below to find your curated network!</h3>
+        
         {
-          profiles.map(profile => (
-            <div key={profile.id} className='w-2/3 shadow-md p-6 rounded-lg mb-8 flex flex-col items-center'>
-              <img className='w-48' src={profile.avatarUrl || 'https://picsum.photos/200'} />
-              <p className='text-xl text-center mt-6'>{profile.name}</p>
-              <p className='text-base text-gray-400  text-center mt-2'>{profile.bio}</p>
-              <Link href={`/profile/${profile.handle}`}>
-                <p className='cursor-pointer text-violet-600 text-lg font-medium text-center mt-2 mb-2'>{profile.handle}</p>
-              </Link>
-              <p className='text-pink-600 text-sm font-medium text-center'>{profile.stats.totalFollowers} followers</p>
-            </div>
-          ))
+          // profiles.map(profile => (
+          //   <div key={profile.id} className='w-2/3 shadow-md p-6 rounded-lg mb-8 flex flex-col items-center'>
+          //     <img className='w-48' src={profile.avatarUrl || 'https://picsum.photos/200'} />
+          //     <p className='text-xl text-center mt-6'>{profile.name}</p>
+          //     <p className='text-base text-gray-400  text-center mt-2'>{profile.bio}</p>
+          //     <Link href={`/profile/${profile.handle}`}>
+          //       <p className='cursor-pointer text-violet-600 text-lg font-medium text-center mt-2 mb-2'>{profile.handle}</p>
+          //     </Link>
+          //     <p className='text-pink-600 text-sm font-medium text-center'>{profile.stats.totalFollowers} followers</p>
+          //   </div>
+          // ))
         }
       </div>
     </div>
