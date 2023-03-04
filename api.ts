@@ -11,6 +11,7 @@ export const client = new ApolloClient({
 
 /* define a GraphQL query  */
 export const exploreProfiles = gql`
+
 query ExploreProfiles {
   exploreProfiles(request: { sortCriteria: MOST_FOLLOWERS }) {
     items {
@@ -25,13 +26,14 @@ query ExploreProfiles {
           }
         }
       }
-      stats {
-        totalFollowers
-      }
+
     }
   }
 }
 `
+// stats {
+//   totalFollowers
+// }
 export const getProfile = gql`
 query Profile($handle: Handle!) {
   profile(request: { handle: $handle }) {
