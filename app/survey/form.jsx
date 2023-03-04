@@ -156,7 +156,10 @@ export function Survey() {
           options={neededSkillsOptions}
         />
       </label>
+      <br></br><br></br>
       <button type="submit">Submit</button>
+      <br></br><br></br>
+      <br></br><br></br>
     </form>
   );
 }

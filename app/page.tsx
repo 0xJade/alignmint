@@ -45,12 +45,16 @@ export default function Home() {
       <div className='flex flex-col justify-center items-center'>
 
         <h1 className='text-5xl mb-6 font-bold'>Welcome to AlignMint 🌿</h1>
-        <p className='text-xl text-center mt-6'>AlignMint is a platform that 
-          helps you find your perfect work buddies! This platform knows what makes you tick and what 
-          skills you have, and then it works its magic to match someone who has 
-          the skills you don't, but shares your values and interests. 
-          Together, you form a super team, filling in each other's gaps, 
-          and kicking butt in everything you do!</p>
+        <p className='text-m text-center mt-6 w-1/2'>Your personal team matchmaker 
+        for the ETHDenver buidlathon. AlignMint creates custom social networks for participants 
+        based on their interests, values, purpose, and skillsets, so you can connect with 
+        like-minded individuals and build the perfect team for your buidlathon project.
+        <br></br><br></br>
+        With AlignMint, you'll be matched with people who share your passions and complement 
+        your skillset, making it easy to collaborate and create something amazing at ETHDenver. 
+        No more wandering around the buidlathon aimlessly, trying to find the right people to work 
+        with – AlignMint has got you covered. So let's buidl our way to success at ETHDenver with AlignMint!
+        </p>
         <br></br>
         <h3>Take the quiz below to find your curated network!</h3>
         <br></br>
