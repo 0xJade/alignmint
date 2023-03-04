@@ -1,13 +1,16 @@
 /* app/page.tsx */
 'use client'
-
 import { useEffect, useState } from 'react'
 import { client, exploreProfiles } from '../api'
 import Link from 'next/link'
 import Auth from './login/authenticate'
 import {Survey} from './survey/form'
+// import type { StaticImageData } from 'next/image';
+// import logo from './images/logo.png';
 
 export default function Home() {
+
+  // const Logo: StaticImageData = logo;
   /* create initial state to hold array of profiles */
   /* react component for setting user data */
   const [profiles, setProfiles] = useState<any>([])
@@ -41,6 +44,9 @@ export default function Home() {
   }
   return (
     <div className='pt-20'>
+      {/* <div className="home-page-bar">
+        <img src={logo} alt="Logo" />
+      </div> */}
       <Auth />
       <div className='flex flex-col justify-center items-center'>
 
@@ -50,10 +56,10 @@ export default function Home() {
         based on their interests, values, purpose, and skillsets, so you can connect with 
         like-minded individuals and build the perfect team for your buidlathon project.
         <br></br><br></br>
-        With AlignMint, you'll be matched with people who share your passions and complement 
+        With AlignMint, you`ll be matched with people who share your passions and complement 
         your skillset, making it easy to collaborate and create something amazing at ETHDenver. 
         No more wandering around the buidlathon aimlessly, trying to find the right people to work 
-        with – AlignMint has got you covered. So let's buidl our way to success at ETHDenver with AlignMint!
+        with AlignMint has got you covered. So let`s buidl our way to success at ETHDenver with AlignMint!
         </p>
         <br></br>
         <h3>Take the quiz below to find your curated network!</h3>

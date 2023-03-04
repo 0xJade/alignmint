@@ -100,6 +100,7 @@ export function Survey() {
     { value: 'community', label: 'Community' },
   ];
 
+
   return (
     <form onSubmit={onSubmit}>
       <label>
@@ -158,7 +159,6 @@ export function Survey() {
       </label>
       <br></br><br></br>
       <button type="submit">Submit</button>
-      <br></br><br></br>
       <br></br><br></br>
     </form>
   );
