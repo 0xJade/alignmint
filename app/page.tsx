@@ -5,13 +5,12 @@ import { client, exploreProfiles } from '../api'
 import Link from 'next/link'
 import Auth from './login/authenticate'
 import {Survey} from './survey/form'
-// import type { StaticImageData } from 'next/image';
-// import logo from './images/logo.png';
+import logo from './images/logo.png';
+import Image from 'next/image';
 
 export default function Home() {
 
   const [isSubmitted,setSubmitted] = useState(false)
-  // const Logo: StaticImageData = logo;
   /* create initial state to hold array of profiles */
   /* react component for setting user data */
   const [profiles, setProfiles] = useState<any>([])
@@ -45,13 +44,15 @@ export default function Home() {
   }
   return (
     <div className='pt-20'>
-      {/* <div className="home-page-bar">
-        <img src={logo} alt="Logo" />
-      </div> */}
+      <div className="home-page-bar">
+        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <Image src={logo} alt="Logo" width={400} height={100} />
+        </div>
+      </div>
       <Auth />
       <div className='flex flex-col justify-center items-center'>
 
-        <h1 className='text-5xl mb-6 font-bold'>Welcome to AlignMint 🌿</h1>
+        {/* <h1 className='text-5xl mb-6 font-bold'>Welcome</h1> */}
         <p className='text-m text-center mt-6 w-1/2'>Your personal team matchmaker 
         for the ETHDenver buidlathon. AlignMint creates custom social networks for participants 
         based on their interests, values, purpose, and skillsets, so you can connect with 
