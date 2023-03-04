@@ -10,6 +10,7 @@ import {Survey} from './survey/form'
 
 export default function Home() {
 
+  const [isSubmitted,setSubmitted] = useState(false)
   // const Logo: StaticImageData = logo;
   /* create initial state to hold array of profiles */
   /* react component for setting user data */
@@ -64,8 +65,9 @@ export default function Home() {
         <br></br>
         <h3>Take the quiz below to find your curated network!</h3>
         <br></br>
-        <Survey/>
+        <Survey setSubmitted={setSubmitted}/>
         {
+          isSubmitted ?
           profiles.map(profile => (
             <div key={profile.id} className='w-2/3 shadow-md p-6 rounded-lg mb-8 flex flex-col items-center'>
               <img className='w-48' src={profile.avatarUrl || 'https://picsum.photos/200'} />
@@ -75,7 +77,7 @@ export default function Home() {
                 <p className='cursor-pointer text-violet-600 text-lg font-medium text-center mt-2 mb-2'>{profile.handle}</p>
               </Link>
             </div>
-          ))
+          )):null
         }
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Select from 'react-select';
 import React, { useState } from 'react';
 
-export function Survey() {
+export function Survey({setSubmitted}) {
 
   const [interests,setInterests] = useState([])
   const [coreValues,setCoreValues] = useState([])
@@ -9,6 +9,8 @@ export function Survey() {
   const [hobbies,setHobbies] = useState([])
   const [skills,setSkills] = useState([])
   const [neededSkills,setNeededSkills] = useState([])
+
+
 
   const onSubmit = e => {
     e.preventDefault()
@@ -22,6 +24,7 @@ export function Survey() {
     console.log(hobbies.map(({label})=>label));
     console.log(skills.map(({label})=>label));
     console.log(neededSkills.map(({label})=>label));
+    setSubmitted(true);
   };
 
   console.log(interests)
