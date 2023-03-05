@@ -78,7 +78,8 @@ export default function Home() {
                 <p className='cursor-pointer text-violet-600 text-lg font-medium text-center mt-2 mb-2'>{profile.handle}</p>
               </Link>
             </div>
-          )):<p className='text-gray-500 text-center mt-4'>Loading profiles...</p>
+          )):null
+          //<p className='text-gray-500 text-center mt-4'>Loading profiles...</p>
         }
       </div>
     </div>
