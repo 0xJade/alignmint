@@ -60,8 +60,8 @@ export default function Home() {
         <br></br><br></br>
         With AlignMint, you`ll be matched with people who share your passions and complement 
         your skillset, making it easy to collaborate and create something amazing at ETHDenver. 
-        No more wandering around the buidlathon aimlessly, trying to find the right people to work 
-        with AlignMint has got you covered. So let`s buidl our way to success at ETHDenver with AlignMint!
+        No more time consuming wandering around the buidlathon, trying to find the right people to work 
+        with - AlignMint has got you covered. So let`s buidl our way to success at ETHDenver with AlignMint!
         </p>
         <br></br>
         <h3>Take the quiz below to find your curated network!</h3>
@@ -78,7 +78,7 @@ export default function Home() {
                 <p className='cursor-pointer text-violet-600 text-lg font-medium text-center mt-2 mb-2'>{profile.handle}</p>
               </Link>
             </div>
-          )):null
+          )):<p className='text-gray-500 text-center mt-4'>Loading profiles...</p>
         }
       </div>
     </div>
